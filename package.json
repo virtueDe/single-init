@@ -1,0 +1,24 @@
+{
+  "name": "single-init",
+  "version": "1.0.0",
+  "description": "this is learn case library",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/virtueDe/single-init.git"
+  },
+  "keywords": [
+    "single",
+    "vue",
+    "Ts"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/virtueDe/single-init/issues"
+  },
+  "homepage": "https://github.com/virtueDe/single-init#readme"
+}
