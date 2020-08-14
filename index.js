@@ -1,1 +1,3 @@
-console.log("hello single project");
+const path = require('path');
+
+console.log(path)

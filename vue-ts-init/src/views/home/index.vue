@@ -9,8 +9,8 @@ import { Vue, Component } from "vue-property-decorator";
 
 @Component({})
 export default class Home extends Vue {
-  private mounted (): void { 
-    console.log('生命周期：mounted');
+  private mounted(): void {
+    console.log("生命周期：mounted");
   }
 }
 </script>

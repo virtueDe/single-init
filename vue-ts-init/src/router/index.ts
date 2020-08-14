@@ -1,13 +1,13 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import Layouts from "@/layouts/index.vue"
+// import Layouts from "@/layouts/index.vue";
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
     path: "/home",
     name: "home",
-    component: () => import("@/views/home/index.vue"),
+    component: () => import("@/views/home/index.vue")
     // children: [
     //   {
     //     path: "/home",

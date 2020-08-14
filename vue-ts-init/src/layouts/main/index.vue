@@ -1,6 +1,6 @@
 <template>
   <div class="app-main">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -19,6 +19,5 @@ export default class Main extends Vue {}
   width: calc(100% - 156px);
   height: calc(100% - 45px);
   box-sizing: border-box;
-  border: 1px solid #000;
 }
 </style>
