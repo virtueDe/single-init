@@ -1,24 +1,26 @@
 <template>
   <div class="app-layouts">
-    <app-header />
-    <!-- <app-left /> -->
-    <!-- <app-main /> -->
+    <app-header :appName="appName" />
+    <app-left />
+    <app-main />
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import AppHeader from "./header/index.vue";
-// import AppLeft from "./left/index.vue";
-// import AppMain from "./main/index.vue";
+import AppLeft from "./left/index.vue";
+import AppMain from "./main/index.vue";
 @Component({
   components: {
     AppHeader,
-    // AppLeft,
-    // AppMain
+    AppLeft,
+    AppMain
   }
 })
-export default class Layouts extends Vue {}
+export default class Layouts extends Vue {
+  appName = "平台名字";
+}
 </script>
 
 <style lang="scss" scoped>

@@ -4,7 +4,6 @@
   "description": "this is learn case library",
   "main": "index.js",
   "scripts": {
-    "all:start": "npm-run-all --parallel start:*",
     "start:vue-ts": "cd vue-ts-init && yarn start",
     "start:umi": "cd umi-init && yarn start"
   },
