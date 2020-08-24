@@ -1,6 +1,10 @@
 <template>
   <div class="app-layouts">
-    <app-header :appName="appName" />
+    <app-header
+      :appName="appName"
+      @click="clickUseInfo"
+      v-model="isShowUserName"
+    />
     <app-left />
     <app-main />
   </div>
@@ -11,6 +15,12 @@ import { Vue, Component } from "vue-property-decorator";
 import AppHeader from "./header/index.vue";
 import AppLeft from "./left/index.vue";
 import AppMain from "./main/index.vue";
+import { IUser } from "@/interface/user";
+
+interface INewUser extends IUser {
+  reverseName: string;
+  (value: string): void;
+}
 @Component({
   components: {
     AppHeader,
@@ -20,6 +30,10 @@ import AppMain from "./main/index.vue";
 })
 export default class Layouts extends Vue {
   appName = "平台名字";
+  isShowUserName = true;
+  clickUseInfo(value: INewUser) {
+    value.setName(value.reverseName);
+  }
 }
 </script>
 
