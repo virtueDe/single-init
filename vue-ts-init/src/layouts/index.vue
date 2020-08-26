@@ -19,7 +19,7 @@ import { IUser } from "@/interface/user";
 
 interface INewUser extends IUser {
   reverseName: string;
-  (value: string): void;
+  setName(value: string): void;
 }
 @Component({
   components: {

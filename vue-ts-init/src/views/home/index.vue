@@ -1,46 +1,65 @@
 <template>
   <div class="home">
-    <span @click="clickSpan">click me</span>
-    <div>{{ obj.num }}</div>
-    <img src="@img/portrait.png" alt="" />
+    <el-calendar v-model="value"></el-calendar>
+    <el-button type="primary" @click="clickFullScreen">全屏</el-button>
+    <!--    <img src="@img/portrait.png" alt="" />-->
+    <!--    <span @click="clickSpan">click me</span>-->
+    <!--    <span>{{ obj.num }}</span>-->
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
+import { IdentityClass, FullScreen } from "./classCase";
 
-// interface Person {
-//   num: number;
-//   str: string;
-//   age?: number;
-//   readonly gender: string;
-// }
-// interface Account extends Person {
-//   nickName?: string;
-// }
-// interface SearchFunc {
-//   (source: string, subString: string): boolean;
-// }
-// enum Color {
-//   red,
-//   yellow,
-//   green,
-//   blue
-// }
+interface Iobj<S, N> {
+  label: S;
+  value: N;
+}
+interface ILength {
+  length: number;
+}
+
 @Component({})
 export default class Home extends Vue {
   obj = {
     num: 0,
     str: "look me"
   };
+  value = new Date();
+
   clickSpan(): void {
     this.obj.num += 1;
   }
+
+  clickFullScreen(): void {
+    new FullScreen(this.$el).viewFullScreen();
+  }
+
+  returnObj<S extends ILength, N>(label: S, value: N): Iobj<S, N> {
+    console.log(label.length);
+    return {
+      label,
+      value
+    };
+  }
+
+  getProperty<T, K extends keyof T>(obj: T, key: K) {
+    return obj[key];
+  }
+
   mounted(): void {
-    // const tom: [string, number] = ["123", 123];
-    // const colorBlue: Color = Color.blue;
+    console.log(this.returnObj("age", 123));
+    console.log(new IdentityClass(123).getIdentity());
+    console.log(this.getProperty(this.obj, "str"));
   }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.home {
+  background: #ffffff;
+  box-sizing: border-box;
+  padding: 10px;
+}
+</style>
